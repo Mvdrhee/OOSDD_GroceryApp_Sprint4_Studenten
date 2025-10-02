@@ -54,8 +54,10 @@ namespace Grocery.Core.Services
             List<BestSellingProducts> topProducts = [];
             foreach (GroceryListItem groceylist in _groceriesRepository.GetAll())
             {
-                Product product = groceylist.Product;
+                Product? product = _productRepository.Get(groceylist.ProductId);
+                if (product == null) { continue; }
                 int bestsellingproductindex = topProducts.FindIndex(p => p.Id == product.Id);
+
                 if (bestsellingproductindex == -1)
                 {
                     topProducts.Add(new BestSellingProducts(product.Id, product.Name, product.Stock, groceylist.Amount, 0));
@@ -66,7 +68,8 @@ namespace Grocery.Core.Services
                 }
             }
 
-            topProducts = topProducts.OrderBy(bsp => bsp.NrOfSells).ToList();
+            topProducts = topProducts.OrderBy(topProduct => topProduct.NrOfSells).ToList();
+            topProducts.Reverse();
             for (int i = 0; i < topProducts.Count; i++)
             {
                 topProducts[i].Ranking = i + 1;
