@@ -66,11 +66,14 @@ namespace Grocery.Core.Services
                 }
             }
 
-            topProducts = (List<BestSellingProducts>)topProducts.OrderBy(bsp => bsp.NrOfSells);
+            topProducts = topProducts.OrderBy(bsp => bsp.NrOfSells).ToList();
             for (int i = 0; i < topProducts.Count; i++)
             {
                 topProducts[i].Ranking = i + 1;
             }
+
+            if (topProducts.Capacity < topX)
+                return topProducts;
             return topProducts.GetRange(0, topX);
         }
 
