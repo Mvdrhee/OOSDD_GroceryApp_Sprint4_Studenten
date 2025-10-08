@@ -32,14 +32,7 @@
                                 </DataTrigger>
                             </Label.Triggers>
                         </Label>
-                        <Label Grid.Column="1" Text="{Binding Tht, StringFormat='Ten minste houdbaar tot {0:yyyy/MM/dd}'}" HorizontalOptions="End">
-                            <Label.Triggers>
-                                <DataTrigger TargetType="Label" Binding="{Binding Tht}" Value="{x:Null}">
-                                    <Setter Property="Text" Value="Onbeperkt houdbaar" />
-                                </DataTrigger>
-                            </Label.Triggers>
-                        </Label>
-
+                        <Label Grid.Column="1" Text="{Binding Tht, TargetNullValue='Onbeperkt houdbaar', StringFormat='Ten minste houdbaar tot {0:yyyy/MM/dd}'}" HorizontalOptions="End" />
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
