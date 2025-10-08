@@ -21,18 +21,18 @@
                 <DataTemplate>
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <Label Grid.Column="0" Text="{Binding Name}"/>
-                        <Label Grid.Column="1" Text="{Binding Stock, StringFormat='{}{0:F0} op voorraad'}" HorizontalOptions="End">
+                        <Label Grid.Column="1" Text="{Binding Stock, StringFormat='{}{0:F0} op voorraad'}">
                             <Label.Triggers>
                                 <DataTrigger TargetType="Label" Binding="{Binding Stock}" Value="0">
                                     <Setter Property="Text" Value="niet op voorraad" />
                                 </DataTrigger>
                             </Label.Triggers>
                         </Label>
-
+                        <Label Grid.Column="1" Text="{Binding Tht, TargetNullValue='Onbeperkt houdbaar', StringFormat='Ten minste houdbaar tot {0:yyyy/MM/dd}'}" HorizontalOptions="End" />
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
