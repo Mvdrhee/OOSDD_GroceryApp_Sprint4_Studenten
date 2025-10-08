@@ -9,6 +9,7 @@
         public Product(int id, string name, int stock) : base(id, name)
         {
             Stock = stock;
+            Tht = null;
         }
         public Product(int id, string name, int stock, DateOnly tht) : base(id, name)
         {
