@@ -2,16 +2,11 @@ using Grocery.App.ViewModels;
 
 namespace Grocery.App.Views;
 
-public partial class GroceryListItemsView : ContentPage
+public partial class ProductCategoryItemsView : ContentPage
 {
-	public GroceryListItemsView(GroceryListItemsViewModel viewModel)
+	public ProductCategoryItemsView(ProductCategoryItemsViewModel viewModel)
 	{
 		InitializeComponent();
         BindingContext = viewModel;
-    }
-
-    private void ImageButton_Clicked(object sender, EventArgs e)
-    {
-
     }
 }

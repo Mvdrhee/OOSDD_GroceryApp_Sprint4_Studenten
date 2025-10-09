@@ -6,12 +6,12 @@ using System.Collections.ObjectModel;
 
 namespace Grocery.App.ViewModels
 {
-    public partial class ProductCategoriesViewModel : BaseViewModel
+    public partial class ProductCategoryViewModel : BaseViewModel
     {
         public ObservableCollection<ProductCategory> ProductCategories { get; set; }
         private readonly IProductCategoryService _productCategoryService;
 
-        public ProductCategoriesViewModel(IProductCategoryService productCategoryService) 
+        public ProductCategoryViewModel(IProductCategoryService productCategoryService) 
         {
             Title = "ProductCategorieën";
             _productCategoryService = productCategoryService;

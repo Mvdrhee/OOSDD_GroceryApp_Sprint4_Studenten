@@ -4,7 +4,7 @@
              xmlns:m="clr-namespace:Grocery.Core.Models;assembly=Grocery.Core"
              xmlns:vm="clr-namespace:Grocery.App.ViewModels"
              x:Class="Grocery.App.Views.ProductCategoryItemsView"
-             x:DataType="vm:ProductCategoriesViewModel"
+             x:DataType="vm:ProductCategoryItemsViewModel"
              Title="ProductCategoryItemsView">
 
     <Shell.TitleView>
@@ -19,7 +19,7 @@
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
         <Border Grid.Column="0" Stroke="#C49B33" StrokeThickness="4" Padding="10" Margin="10" HorizontalOptions="Center">
-            <CollectionView x:Name="CategoryItems" ItemsSource="{Binding CategoryItems}" Margin="20" HorizontalOptions="Center" EmptyView="Deze categorie bevat geen producten">
+            <CollectionView x:Name="CategoryItems" ItemsSource="{Binding ProductCategoryItems}" Margin="20" HorizontalOptions="Center" EmptyView="Deze categorie bevat geen producten">
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout Orientation="Vertical" ItemSpacing="10" />
                 </CollectionView.ItemsLayout>
