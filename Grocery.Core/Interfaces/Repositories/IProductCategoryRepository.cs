@@ -11,5 +11,6 @@ namespace Grocery.Core.Interfaces.Repositories
     {
         public List<int> GetProductIds(int id);
         public List<ProductCategory> GetCategories();
+        void AddProduct(int categoryId, int productId);
     }
 }

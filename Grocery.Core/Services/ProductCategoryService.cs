@@ -32,5 +32,7 @@ namespace Grocery.Core.Services
             }
             return products;
         }
+        public void AddProduct(Product product)
+        { }
     }
 }
