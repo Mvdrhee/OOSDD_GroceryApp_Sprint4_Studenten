@@ -4,7 +4,7 @@
              xmlns:m="clr-namespace:Grocery.Core.Models;assembly=Grocery.Core"
              xmlns:vm="clr-namespace:Grocery.App.ViewModels"
              x:Class="Grocery.App.Views.ProductCategoryItemsView"
-             x:DataType="vm:ProductCategoryItemsViewModel"
+             x:DataType="vm:ProductCategoriesViewModel"
              Title="ProductCategoryItemsView">
 
     <Shell.TitleView>
