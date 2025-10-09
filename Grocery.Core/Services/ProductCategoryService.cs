@@ -32,7 +32,9 @@ namespace Grocery.Core.Services
             }
             return products;
         }
-        public void AddProduct(Product product)
-        { }
+        public void AddProduct(int productId, int categoryId)
+        {
+            _productCategoryRepository.AddProduct(productId, categoryId);
+        }
     }
 }

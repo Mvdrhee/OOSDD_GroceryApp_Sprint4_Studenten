@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +26,15 @@ namespace Grocery.Core.Data.Repositories
         public List<int> GetProductIds(int id)
         {
             return categories.First(c => c.Id == id).ProductIds;
+        }
+        public void AddProduct(int productId, int categoryId)
+        {
+            ProductCategory? category = categories.FirstOrDefault(c => c.Id == categoryId);
+            if (category == null) { return; }
+            if (!category.ProductIds.Contains(productId))
+            {
+                category.ProductIds.Add(productId);
+            }
         }
     }
 }

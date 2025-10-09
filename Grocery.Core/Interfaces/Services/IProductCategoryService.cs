@@ -11,6 +11,6 @@ namespace Grocery.Core.Interfaces.Services
     {
         List<ProductCategory> GetProductCategories();
         List<Product> GetProducts(int id);
-        void AddProduct(int categoryId, int productId);
+        void AddProduct(int prodcutId, int categoryId);
     }
 }
